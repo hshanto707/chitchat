@@ -20,6 +20,7 @@ const Avatar: React.FC<AvatarProps> = ({ user }) => {
           fill
           src={user?.image || '/assets/images/placeholder.png'}
           alt="Avatar"
+          className="rounded-full"
         />
       </div>
       {/* {isActive ? ( */}

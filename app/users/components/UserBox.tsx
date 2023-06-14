@@ -19,11 +19,11 @@ const UserBox: React.FC<UserBoxProps> = ({
     setIsLoading(true);
 
     axios.post('/api/conversations', { userId: data.id })
-    .then((data) => {
-      router.push(`/conversations/${data.data.id}`);
-    })
-    .finally(() => setIsLoading(false));
-  }, [data, router]);
+      .then((data) => {
+        router.push(`/conversations/${data.data.id}`);
+      })
+      .finally(() => setIsLoading(false));
+    }, [data, router]);
 
   return (
     <div>
@@ -38,9 +38,11 @@ const UserBox: React.FC<UserBoxProps> = ({
           flex 
           items-center 
           space-x-3 
-          bg-white 
-          p-3 
-          hover:bg-neutral-100
+          my-3
+          px-3 
+          pt-3
+          pb-2
+          hover:bg-blue-400
           rounded-lg
           transition
           cursor-pointer
@@ -51,7 +53,7 @@ const UserBox: React.FC<UserBoxProps> = ({
           <div className="focus:outline-none">
             <span className="absolute inset-0" aria-hidden="true" />
             <div className="flex justify-between items-center mb-1">
-              <p className="text-sm font-medium text-gray-900">
+              <p className="text-lg font-medium text-white">
                 {data.name}
               </p>
             </div>
